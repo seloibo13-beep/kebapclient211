@@ -4,11 +4,11 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: DLL-Yap
-        run: g++ -shared -o KebapMenu.dll main.cpp -luser32
-      - name: Dosyayi-Hazırla
-        uses: actions/upload-artifact@v3
+        run: g++ -shared -o KebapMenu.dll main.cpp -luser32 -lgdi32
+      - name: Dosyayi-Hazirla
+        uses: actions/upload-artifact@v4
         with:
           name: Kebap-DLL
           path: KebapMenu.dll
